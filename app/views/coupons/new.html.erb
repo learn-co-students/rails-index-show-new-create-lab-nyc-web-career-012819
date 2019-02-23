@@ -1,0 +1,17 @@
+<!-- <form action="/coupons" method="post">
+  <input type="text" name="coupon[:coupon_code]" id="coupon_coupon_code">
+  <input type="text" name="coupon[:store]" id="coupon_store">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Submit">
+</form> -->
+
+<h1>Coupon Form</h1>
+<%= form_tag coupons_path do %>
+  <label>Code</label>
+  <%= text_field_tag :'coupon[coupon_code]' %><br>
+  <label>Store</label>
+  <%= text_field_tag :'coupon[store]' %>
+  <% hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= submit_tag 'Submit Coupon' %>
+
+<% end %>
